@@ -1,0 +1,9 @@
+<h1>US Time Zone Display</h1>
+
+<button (click)='setZone("PST")' [ngClass]="{'yellow_box': (yellow === 'PST')}">PST</button>
+<button (click)='setZone("MST")' [ngClass]="{'yellow_box': (yellow === 'MST')}">MST</button>
+<button (click)='setZone("CST")' [ngClass]="{'yellow_box': (yellow === 'CST')}">CST</button>
+<button (click)='setZone("EST")' [ngClass]="{'yellow_box': (yellow === 'EST')}">EST</button>
+<button (click)='clear()'>Clear</button>
+
+<h1 [ngClass]="{'hide': (hide === true)}">{{ date | date: 'medium' }}</h1>
