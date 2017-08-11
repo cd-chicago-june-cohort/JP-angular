@@ -1,0 +1,24 @@
+
+
+.brown {
+    height: 75px;
+    width: 75px;
+    background: #800000;
+    border: 2px solid black;
+    display: inline-block;
+}
+
+.switch {
+    height: 50px;
+    width: 50px;
+    background: #20c825;
+    border: 2px solid black;
+    text-align: center;
+    line-height: 50px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.off {
+    background: red;
+}
