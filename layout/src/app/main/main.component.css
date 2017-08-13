@@ -1,0 +1,17 @@
+
+
+ 
+#mainContainer {
+    border: 1px solid grey;
+    width: 64.5%;
+    height: 400px;
+    display: inline-block;
+    background: lightblue;
+    margin-top: 20px;
+    margin-left: 5%;
+} 
+
+
+p {
+    margin: 10px;
+}

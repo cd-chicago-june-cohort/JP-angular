@@ -1,0 +1,14 @@
+
+
+#headerContainer {
+    background: lightblue;
+    width: 90%;
+    margin-left: 5%;
+    height: 100px;
+    margin-top: 25px;
+    border: 1px solid grey;
+}
+
+p, h1 {
+    margin-left: 20px;
+}

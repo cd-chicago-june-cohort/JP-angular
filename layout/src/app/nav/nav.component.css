@@ -1,0 +1,23 @@
+
+#navContainer {
+    border: 1px solid grey;
+    width: 20%;
+    height: 400px;
+    display: inline-block;
+    background: lightblue;
+    vertical-align: top;
+    margin-left: 5%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+button {
+    margin: 15px;
+    width: 140px;
+    height: 45px;
+    margin-left: 20px;
+}
+
+p {
+    margin-left: 10px;
+}
