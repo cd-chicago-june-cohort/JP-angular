@@ -1,0 +1,95 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Registration</h1>
+
+  <div *ngIf="success">Thank you for registering with us {{ user.firstName }} {{ user.lastName }}. We sent cofirmation to {{ user.email }}.</div>
+
+
+  <h2>Account Info:</h2>
+  <form (submit)="onSubmit()" #formData='ngForm'>
+    <label for="firstName">First Name:</label>
+    <input type="text" name="firstName" id="firstName" 
+      required 
+      minlength="4" 
+      maxlength="24" 
+      [(ngModel)]="user.firstName" 
+      #firstName="ngModel">
+    <span *ngIf="!firstName.valid">First name is required</span>
+    <br>
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastNAme" name="lastName" 
+      required 
+      [(ngModel)]="user.lastName" 
+      #lastName="ngModel">
+    <span *ngIf="!lastName.valid">Last name is required</span>
+    <br>
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email" 
+      required
+      pattern='^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$'  
+      [(ngModel)]="user.email" 
+      #email="ngModel">
+    <span *ngIf="!email.valid">A valid email is required</span>
+    <br>
+    <label for="password">Password</label> 
+    <input type="text" id="password" name="password" 
+      required 
+      minlength="4" 
+      [(ngModel)]="user.password" 
+      #password="ngModel">
+    <span *ngIf="!password.valid">Password must be at least 4 characters</span>
+    <br>
+    <label for="confirmPassword">Confirm Password</label>
+    <input type="text" id=confirmPassword name="confirm_password"
+      required
+      [(ngModel)]="confirmPassword"
+      (change)="checkPassword()">
+    <span *ngIf="!passwordMatch">Password confirmation must match original</span>
+    <br>
+    <label for="street">Street Address:</label>
+    <input type="text" id="street" name="street" 
+      required 
+      [(ngModel)]="user.street" 
+      #street="ngModel">
+    <span *ngIf="!street.valid">A street address is required</span>
+    <br>
+    <label for="apartment">Unit/Apt#:</label>
+    <input type="text" id="apartment" name="apartment" 
+      [(ngModel)]="user.apartment">
+    <br>
+    <label for="city">City:</label> 
+    <input type="text" name="city" 
+      required 
+      [(ngModel)]="user.city" 
+      #city="ngModel">
+    <span *ngIf="!city.valid">Your city is required</span>
+    <br>
+    <label for="state">State: </label>
+    <select name='state' required [(ngModel)]='user.state' #state="ngModel">
+      <option *ngFor='let state of states' value='{{state}}'>{{state}}</option>
+    </select>
+    <span *ngIf="!state.valid">Choosing a state is required</span>
+    <br>
+    I'm feeling lucky: <br>
+    Yes <input type="radio" name="lucky" value="Yes" required [(ngModel)]="user.lucky" #lucky="ngModel"> 
+    No <input type="radio" name="lucky" value="No" required [(ngModel)]="user.lucky" #lucky="ngModel"><br>
+    <br>
+    <input [disabled]='!formData.valid' type="submit" value="Register">
+  </form>
+
+  <h1>{{ user | json }}</h1>
+
+
+
+
+
+
+</body>
+</html> 
