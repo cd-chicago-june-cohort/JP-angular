@@ -1,0 +1,9 @@
+
+<div>
+  <p>{{ thisQuote.content }}</p>
+  <p> - {{ thisQuote.author }}</p>
+  <p>Votes: <span *ngIf="thisQuote.votes > 0">+</span>{{ thisQuote.votes }}</p>
+  <button (click)="initUpvote()">Upvote</button>
+  <button (click)="initDownvote()">Downvote</button>
+  <button (click)="destroy()">Delete</button>
+</div>

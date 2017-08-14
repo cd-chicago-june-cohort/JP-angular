@@ -1,0 +1,13 @@
+* {
+    margin: 5px;
+    padding: 5px;
+}
+
+#container {
+    width: 970px;
+    border: 1px solid black;
+}
+
+span {
+    color: red;
+}
