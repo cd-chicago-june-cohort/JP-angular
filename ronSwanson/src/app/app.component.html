@@ -1,0 +1,10 @@
+<button (click)="getIt()">Get Ron Swanson quote!</button>
+
+<form (submit)="getMany()">
+  Multiple:<input type="text" name="num" [(ngModel)]="number">
+  <input type="submit" value="Get many">
+</form>
+
+
+
+<h2 *ngFor="let quote of quotes">{{ quote }}</h2>
