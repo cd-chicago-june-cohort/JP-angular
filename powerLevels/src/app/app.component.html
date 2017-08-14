@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <fieldset>
+
+    <legend>PowerComponent</legend>
+
+    <form (submit)="onSubmit()">
+      <span>Initial Power Level:</span>
+      <select name='initial' [(ngModel)]="initialPowerLevel">
+        <option *ngFor='let val of vals' value='{{val}}'>{{val}}</option>
+      </select>
+      <input type="submit" value="Calculate Powers">
+    </form>
+
+    <app-human [hc]="humanComponent"></app-human>
+    <app-saiyan [sc]="saiyanComponent"></app-saiyan>
+    <app-super-saiyan [ssc]="superSaiyanComponent"></app-super-saiyan>
+    <app-super-saiyan-two [ssc2]="superSaiyanComponentTwo" [msgTwo]="messageTwo"></app-super-saiyan-two>
+    <app-super-saiyan-three [ssc3]="superSaiyanComponentThree" [msgThree]="messageThree"></app-super-saiyan-three>
+    <app-super-saiyan-four [ssc4]="superSaiyanComponentFour" [msgFour]="messageFour"></app-super-saiyan-four> 
+    
+  </fieldset>
+
+</body>
+</html>
+
